@@ -504,6 +504,11 @@ enum KeyboardLeds : uint8_t {
 };
 
 #define SHIFT 0x80
+#ifdef CUSTOM_ASCIIMAP
+#define SIZEOF_ASCIIMAP 127
+uint8_t *_asciimap;
+#else
+#define SIZEOF_ASCIIMAP sizeof(_asciimap)
 static const uint8_t _asciimap[] PROGMEM =
 {
 	KEY_RESERVED,           // NUL
@@ -636,4 +641,4 @@ static const uint8_t _asciimap[] PROGMEM =
 	KEY_TILDE|SHIFT,    	// ~
 	KEY_RESERVED			// DEL
 };
-
+#endif

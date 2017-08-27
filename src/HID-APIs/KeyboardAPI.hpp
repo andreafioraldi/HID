@@ -148,7 +148,7 @@ size_t KeyboardAPI::remove(uint8_t k)
 
 size_t KeyboardAPI::set(uint8_t k, bool s){
 	// Ignore invalid input
-	if(k >= sizeof(_asciimap)){
+	if(k >= SIZEOF_ASCIIMAP){
 		setWriteError();
 		return 0;
 	}
